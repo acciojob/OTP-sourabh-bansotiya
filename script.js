@@ -6,13 +6,15 @@ const inputs = document.querySelectorAll('.code');
             const val = e.target.value;
             
             if (val.length === 1 && index < 5) {
-                inputs[index + 1].focused();
+                inputs[index + 1].focus();
             }
         });
 
         input.addEventListener('keydown', (e) => {
-            if (e.key === 'Backspace' && index > 0) {
-                inputs[index - 1].focused();
+            if (e.key === 'Backspace') {
+				if(index > 0){
+                inputs[index -1].focus();
             }
+			}
         });
     });
